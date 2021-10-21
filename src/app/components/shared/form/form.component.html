@@ -1,0 +1,43 @@
+<div class="p-grid p-fluid">
+    Abonar en caja
+    <div class="p-col-12 p-md-4">
+        <div class="p-inputgroup">
+            <p-inputNumber [(ngModel)]="abono" ></p-inputNumber>
+            <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
+
+            </p-calendar>   
+            
+            <span class="p-buttonset">
+                <button pButton type="button" 
+                label="Abono" 
+                icon="pi pi-check"
+                class="ml-2">
+
+                </button>
+            </span>  
+        </div>
+    </div><!--Fin ingresos-->
+    Ingresar gasto
+    <div class="p-col-12 p-md-4">
+        <div class="p-inputgroup">
+            <p-inputNumber [(ngModel)]="abono" ></p-inputNumber>
+            <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
+
+            </p-calendar>   
+            
+            <span class="p-buttonset">
+                <button pButton type="button" 
+                label="Gasto" 
+                icon="pi pi-check"
+                class="ml-2 p-button-warning">
+
+                </button>
+            </span>
+        </div>
+        <div class="col-8 p-0 mt-2">
+            <textarea  pInputTextarea [(ngModel)]="detalle" placeholder="Agregar Detalle..."></textarea>
+        </div>
+
+    </div><!--Fin gastos-->
+
+</div>

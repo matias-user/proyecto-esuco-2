@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* --primary-color:colores, text-color:text, --surface-300:fondo
+ */
+body{
+    font-family: var(--font-family);
+    background-color: var(--surface-300);
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.p-progressbar .p-progressbar-label{
+    line-height: 2!important;
+}
