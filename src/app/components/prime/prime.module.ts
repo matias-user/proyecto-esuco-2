@@ -8,6 +8,10 @@ import {CalendarModule} from 'primeng/calendar';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {KnobModule} from 'primeng/knob';
 import { TagModule } from 'primeng/tag';
+import {DialogModule} from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [],
@@ -21,7 +25,11 @@ import { TagModule } from 'primeng/tag';
     CalendarModule,
     InputTextareaModule,
     KnobModule,
-    TagModule
+    TagModule,
+    DialogModule,
+    ButtonModule,
+    InputTextModule,
+    MessageModule
   ]
 })
 export class PrimeModule { }

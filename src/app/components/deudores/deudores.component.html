@@ -1,1 +1,5 @@
-<p>deudores works!</p>
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.gasto}}
+    </li>
+  </ul>

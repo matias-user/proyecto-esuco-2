@@ -4,10 +4,12 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { PrimeModule } from './prime/prime.module';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './shared/form/form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeudoresComponent } from './deudores/deudores.component';
 import { HistorialComponent } from './historial/historial.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FormDosComponent } from './shared/form-dos/form-dos.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,16 @@ import { HistorialComponent } from './historial/historial.component';
     HomeComponent,
     FormComponent,
     DeudoresComponent,
-    HistorialComponent
+    HistorialComponent,
+    FormDosComponent
   ],
   imports: [
     CommonModule,
     PrimeModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   exports:[
     MenuComponent,

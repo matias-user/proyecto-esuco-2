@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-deudores',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeudoresComponent implements OnInit {
 
-  constructor() { }
+  items!: Observable<any[]>;
+  constructor(private afs: AngularFirestore) {
+    this.items = afs.collection('gastos').valueChanges();
+   }
 
   ngOnInit(): void {
   }

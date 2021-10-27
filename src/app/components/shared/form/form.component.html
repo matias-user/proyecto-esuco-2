@@ -1,43 +1,35 @@
 <div class="p-grid p-fluid">
-    Abonar en caja
+    <label >Abonar en caja</label>
     <div class="p-col-12 p-md-4">
-        <div class="p-inputgroup">
-            <p-inputNumber [(ngModel)]="abono" ></p-inputNumber>
-            <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
+        <form [formGroup]="miFormulario" >
+            <div class="p-inputgroup">
+                <p-inputNumber placeholder="Ingresar abono"
+                                formControlName="ingreso">
+                </p-inputNumber>
+                
+                <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
 
-            </p-calendar>   
-            
-            <span class="p-buttonset">
-                <button pButton type="button" 
-                label="Abono" 
-                icon="pi pi-check"
-                class="ml-2">
+                </p-calendar>   
+                
+                <span class="p-buttonset">
+                    <button pButton type="button" 
+                    label="Abono" 
+                    icon="pi pi-check"
+                    class="ml-2">
 
-                </button>
-            </span>  
-        </div>
+                    </button>
+                </span>  
+            </div>
+            <p-message *ngIf="esValido()" 
+                severity="error" text="Debe ingresar un monto arriba de 0"></p-message>
+        </form>
     </div><!--Fin ingresos-->
-    Ingresar gasto
-    <div class="p-col-12 p-md-4">
-        <div class="p-inputgroup">
-            <p-inputNumber [(ngModel)]="abono" ></p-inputNumber>
-            <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
+    <app-form-dos></app-form-dos>
 
-            </p-calendar>   
-            
-            <span class="p-buttonset">
-                <button pButton type="button" 
-                label="Gasto" 
-                icon="pi pi-check"
-                class="ml-2 p-button-warning">
-
-                </button>
-            </span>
-        </div>
-        <div class="col-8 p-0 mt-2">
-            <textarea  pInputTextarea [(ngModel)]="detalle" placeholder="Agregar Detalle..."></textarea>
-        </div>
-
-    </div><!--Fin gastos-->
-
+    <label >Valid</label>
+    <pre>{{ miFormulario.valid }}</pre>
+    <label >values</label>
+    <pre>{{ miFormulario.value | json }}</pre>
+    <label >errors</label>
+    <pre>{{ miFormulario.errors }}</pre>
 </div>
