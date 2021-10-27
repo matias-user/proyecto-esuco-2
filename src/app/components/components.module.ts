@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeudoresComponent } from './deudores/deudores.component';
 import { HistorialComponent } from './historial/historial.component';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule  } from '@angular/fire/compat/firestore';
 import { FormDosComponent } from './shared/form-dos/form-dos.component';
 
 @NgModule({

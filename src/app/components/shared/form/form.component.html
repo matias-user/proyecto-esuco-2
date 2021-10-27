@@ -1,18 +1,18 @@
 <div class="p-grid p-fluid">
     <label >Abonar en caja</label>
     <div class="p-col-12 p-md-4">
-        <form [formGroup]="miFormulario" >
+        <form [formGroup]="miFormulario" (ngSubmit)="ingresos()" >
             <div class="p-inputgroup">
                 <p-inputNumber placeholder="Ingresar abono"
-                                formControlName="ingreso">
+                            formControlName="ingreso">
                 </p-inputNumber>
                 
-                <p-calendar [(ngModel)]="fecha" placeholder="Fecha" class="ml-2" >
+                <p-calendar  placeholder="Fecha" class="ml-2" >
 
                 </p-calendar>   
                 
                 <span class="p-buttonset">
-                    <button pButton type="button" 
+                    <button pButton type="submit" 
                     label="Abono" 
                     icon="pi pi-check"
                     class="ml-2">
