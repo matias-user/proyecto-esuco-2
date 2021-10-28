@@ -12,26 +12,19 @@ export class FormComponent implements OnInit {
   constructor( private formBuilder: FormBuilder, private afs: FireService ) { }
 
   miFormulario: FormGroup = this.formBuilder.group({
-    ingreso: [ , [ Validators.required, Validators.min(0)]],
-    // fechaIngr: [ ,  Validators.required]
+    ingreso: [ 0, [ Validators.required, Validators.min(1)]],
   })
   esValido(){
     return this.miFormulario.controls.ingreso.errors
             && this.miFormulario.controls.ingreso.touched
   }
-  ingresos(){
+  ingresar(){
     if( this.miFormulario.invalid ){
       this.miFormulario.markAllAsTouched();
       return;
     }
-    this.afs.guardarIngreso( this.miFormulario.value )
+    this.afs.guardarIngreso( this.miFormulario.controls.ingreso.value, true )
   }
-  abono:number = 0;
-  fecha!:Date;
-  correcto:boolean = true;
-  detalle:string = '';
-  
-
   ngOnInit(): void {
   }
 

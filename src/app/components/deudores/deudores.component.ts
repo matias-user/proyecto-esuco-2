@@ -11,7 +11,7 @@ export class DeudoresComponent implements OnInit {
 
   items!: Observable<any[]>;
   constructor(private afs: AngularFirestore) {
-    this.items = afs.collection('gastos').valueChanges();
+    this.items = afs.collection('ingresos').valueChanges();
    }
 
   ngOnInit(): void {

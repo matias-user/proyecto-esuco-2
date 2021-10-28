@@ -1,15 +1,11 @@
 <div class="p-grid p-fluid">
     <label >Abonar en caja</label>
     <div class="p-col-12 p-md-4">
-        <form [formGroup]="miFormulario" (ngSubmit)="ingresos()" >
+        <form [formGroup]="miFormulario" (ngSubmit)="ingresar()" >
             <div class="p-inputgroup">
                 <p-inputNumber placeholder="Ingresar abono"
                             formControlName="ingreso">
                 </p-inputNumber>
-                
-                <p-calendar  placeholder="Fecha" class="ml-2" >
-
-                </p-calendar>   
                 
                 <span class="p-buttonset">
                     <button pButton type="submit" 
@@ -25,11 +21,4 @@
         </form>
     </div><!--Fin ingresos-->
     <app-form-dos></app-form-dos>
-
-    <label >Valid</label>
-    <pre>{{ miFormulario.valid }}</pre>
-    <label >values</label>
-    <pre>{{ miFormulario.value | json }}</pre>
-    <label >errors</label>
-    <pre>{{ miFormulario.errors }}</pre>
 </div>

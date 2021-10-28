@@ -4,39 +4,25 @@
 
 <p-dialog header="Ingresar gasto" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false">
-
+    
+    <form [formGroup]="miFormulario" >
         <div class="p-inputgroup">
-            <p-inputNumber placeholder="Ingresar monto" ></p-inputNumber>
-            <input class="ml-1" type="text" placeholder="Ingresar rut" pInputText />        
+            <p-inputNumber placeholder="Ingresar monto"
+                           formControlName="gasto"  ></p-inputNumber>
+            <input class="ml-1" 
+            type="text" 
+            formControlName="rut"
+            placeholder="Ingresar rut" pInputText />        
         </div>
         <div class="p-inputgroup mt-2">
             <textarea  pInputTextarea 
+                formControlName="detalle"
                 placeholder="Agregar Detalle..."></textarea>
         </div>
-
+    </form>
         <ng-template pTemplate="footer">
-            <p-button icon="pi pi-check" (click)="display=false" label="Yes" class="p-button-text"></p-button>
-            <p-button icon="pi pi-times" (click)="display=false" label="No"></p-button>
+            <p-button icon="pi pi-check" (click)="guardar()" label="Guardar" class="p-button-text"></p-button>
+            <p-button icon="pi pi-times" (click)="display=false" label="Cerrar"></p-button>
         </ng-template>
+    
 </p-dialog>
-<!-- Ingresar gasto
-    <div class="p-col-12 p-md-4">
-        <div class="p-inputgroup">
-            <p-inputNumber  ></p-inputNumber>
-            <p-calendar placeholder="Fecha" class="ml-2"  >
-
-            </p-calendar>   
-            
-            <span class="p-buttonset">
-                <button pButton type="button" 
-                label="Gasto" 
-                icon="pi pi-check"
-                class="ml-2 p-button-warning">
-
-                </button>
-            </span>
-        </div>
-        <div class="col-8 p-0 mt-2">
-            <textarea  pInputTextarea placeholder="Agregar Detalle..."></textarea>
-        </div>
-    </div>Fin gastos -->
