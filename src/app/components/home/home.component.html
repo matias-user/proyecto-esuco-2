@@ -3,20 +3,20 @@
         <h1 class="title" >Inicio</h1>
     </ng-template>
     <app-form></app-form>
-<div class="grid pt-0">
+<div class="grid pt-0 mt-2">
     <div class="col-6 sm:col-4">
         <p-card header="Fecha" >
             {{fecha | date:'dd-MMMM-yyyy'}}
         </p-card>  
     </div>
     <div class="col-6 sm:col-4">
-        <p-card header="Total" >
-            {{ 25000 | currency:'CLP'}}
+        <p-card header="Abonos" id="abonos" >
+            {{ abonos | currency:'CLP'}}
         </p-card>
     </div>
     <div class="col-6 sm:col-4">
-        <p-card header="Gastos" >
-            {{ 10000 | currency:'CLP'}}
+        <p-card header="Gastos" #gasto >
+            {{ gastos | currency:'CLP'}}
         </p-card> 
     </div>
 </div>
@@ -24,7 +24,7 @@
     <div class="flex card-container flex-wrap justify-content-around ">
     <div class="flex align-items-center">
         <h3 class=" inline " >
-        <span class="subtitle" >En caja: </span> <i class="pi pi-dollar" ></i>{{15000 | number}}
+        <span class="subtitle" >En caja: </span> <i class="pi pi-dollar" ></i>{{enCaja | number}}
     </h3>
 </div>
 <div class="tags">

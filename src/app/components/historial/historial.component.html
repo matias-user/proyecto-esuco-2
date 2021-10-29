@@ -1,1 +1,18 @@
-<p>historial works!</p>
+<p-card>
+
+    <table class="styled-table" >
+        <tr>
+            <th>Fecha</th>
+            <th>RUT</th>
+            <th>Gasto</th>
+            <th>Detalle</th>
+        </tr>
+        <tr class="active-row" *ngFor="let item of listGastos" >
+            <td>{{item.fecha |date}}</td>
+            <td>{{item.rut}}</td>
+            <td>{{item.gasto | currency:'CLP'}}</td>
+            <td>{{item.detalle}}</td>
+        </tr>
+    </table>
+
+</p-card>

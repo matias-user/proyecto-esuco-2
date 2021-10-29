@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
       return;
     }
     this.afs.guardarIngreso( this.miFormulario.controls.ingreso.value, true )
+    this.miFormulario.reset();
   }
   ngOnInit(): void {
   }
