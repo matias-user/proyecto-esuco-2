@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeudoresComponent } from './components/deudores/deudores.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'historial',
     component:HistorialComponent
+  },
+  {
+    path:'login',
+    component: LoginComponent
   },
   {
     path:'**',

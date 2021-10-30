@@ -10,6 +10,7 @@ import { DeudoresComponent } from './deudores/deudores.component';
 import { HistorialComponent } from './historial/historial.component';
 import { AngularFirestoreModule  } from '@angular/fire/compat/firestore';
 import { FormDosComponent } from './shared/form-dos/form-dos.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormDosComponent } from './shared/form-dos/form-dos.component';
     FormComponent,
     DeudoresComponent,
     HistorialComponent,
-    FormDosComponent
+    FormDosComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,7 @@ import { FormDosComponent } from './shared/form-dos/form-dos.component';
     FormsModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     MenuComponent,

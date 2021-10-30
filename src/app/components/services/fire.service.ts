@@ -28,6 +28,8 @@ export class FireService {
       const ingresar =  this.afs.collection<Gastos>('gastos');
       ingresar.add({gasto: ingreso, rut:ruts!, detalle:detalles!, fecha: Date.now() } );
     }
-    
+  }
+  eliminarIngreso( id:string, ingreso: string ){
+    return this.afs.collection(ingreso).doc(id).delete();
   }
 }

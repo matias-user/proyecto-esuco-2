@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from 'primeng/table';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [],
@@ -29,7 +30,8 @@ import {TableModule} from 'primeng/table';
     ButtonModule,
     InputTextModule,
     MessageModule,
-    TableModule
+    TableModule,
+    PasswordModule
   ]
 })
 export class PrimeModule { }

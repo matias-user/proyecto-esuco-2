@@ -12,13 +12,15 @@ p {margin: 0;}.confirmation-content {display: flex;align-items: center;justify-c
 })
 export class FormDosComponent implements OnInit {
 
+  patronRut: string = '^[0-9]+-[0-9kK]{1}$';
+
   constructor(private primengConfig: PrimeNGConfig, 
           private frm: FormBuilder,
           private fire: FireService) { }
 
   miFormulario: FormGroup =  this.frm.group({
     gasto: [ 0, [Validators.required, Validators.min(1)]],
-    rut: ['', [Validators.required, Validators.minLength(9)]],
+    rut: ['', [Validators.required, Validators.pattern(this.patronRut)]],
     detalle: ['']
   })
 
@@ -26,7 +28,10 @@ export class FormDosComponent implements OnInit {
     this.primengConfig.ripple = true;
   }
   guardar(){
-    if( this.miFormulario.invalid ) return;
+    if( this.miFormulario.invalid ){
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
 
     this.fire.guardarIngreso( 
       this.miFormulario.controls.gasto.value, false,
@@ -39,5 +44,9 @@ export class FormDosComponent implements OnInit {
 
   showDialog() {
       this.display = true;
+  }
+  esValido(campo: string){
+    return this.miFormulario.controls[campo].errors
+          && this.miFormulario.controls[campo].touched
   }
 }

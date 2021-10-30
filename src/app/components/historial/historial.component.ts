@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Gastos } from '../interfaces/Gastos';
+import { Ingreso } from '../interfaces/Ingresos';
 import { FireService } from '../services/fire.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { FireService } from '../services/fire.service';
 })
 export class HistorialComponent implements OnInit {
 
-  listGastos: Gastos[] = [];
+  listaGastos: Gastos[] = [];
+  listaAbonos: Ingreso[] = [];
   cols!: any[];
   constructor(private servicios: FireService) { }
 
@@ -24,15 +26,30 @@ export class HistorialComponent implements OnInit {
   }
   obtenerDatos(){
     this.servicios.traerHistorialGastos().subscribe( data => {
-      this.listGastos = [];
+      this.listaGastos = [];
       data.forEach( (campo: any) => {
         
-        this.listGastos.push({
+        this.listaGastos.push({
           id: campo.payload.doc.id,
           ...campo.payload.doc.data()
         })
       });
-      console.log( this.listGastos )
+      console.log( this.listaGastos )
     })
+    this.servicios.traerHistorialAbonos().subscribe( data => {
+      this.listaAbonos = [];
+      data.forEach( (campo: any) => {
+        
+        this.listaAbonos.push({
+          id: campo.payload.doc.id,
+          ...campo.payload.doc.data()
+        })
+      });
+    })
+  }
+  eliminarIngreso(id:string, ingreso:string){
+    this.servicios.eliminarIngreso(id,ingreso).then( () => {
+      console.log('Se ha eliminado')
+    }, error => console.log )
   }
 }
